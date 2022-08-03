@@ -36,5 +36,6 @@ public class PlateView implements View {
 
         final PrintWriter responseWriter = response.getWriter();
         responseWriter.write(view.render(viewModel));
+        responseWriter.close();
     }
 }
