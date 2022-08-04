@@ -2,7 +2,6 @@ package com.voelza.plate.spring.adapter;
 
 import com.voelza.plate.Model;
 import com.voelza.plate.Plate;
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.web.servlet.View;
 
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +12,7 @@ import java.util.Map;
 
 public class PlateView implements View {
 
-    private com.voelza.plate.view.View view;
+    private final com.voelza.plate.view.View view;
 
     PlateView(final String viewName, final Locale locale) {
         view = Plate.createView(viewName, locale);
@@ -30,7 +29,7 @@ public class PlateView implements View {
         response.setCharacterEncoding("UTF-8");
 
         final Model viewModel = new Model();
-        if(model != null) {
+        if (model != null) {
             model.forEach(viewModel::add);
         }
 
