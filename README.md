@@ -5,18 +5,18 @@ Spring adapter for PLATE templating framework.
 - At least Java 17
 - Enable Spring build-info goal in your pom.xml
 ```xml
-	<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>build-info</id>
-						<goals>
-							<goal>build-info</goal>
-						</goals>
-					</execution>
-				</executions>
-		</plugin>
+<plugin>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-maven-plugin</artifactId>
+	<executions>
+		<execution>
+			<id>build-info</id>
+			<goals>
+				<goal>build-info</goal>
+			</goals>
+		</execution>
+	</executions>
+</plugin>
 ```
 
 ## Usage:
