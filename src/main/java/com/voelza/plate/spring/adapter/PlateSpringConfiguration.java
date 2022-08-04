@@ -2,6 +2,7 @@ package com.voelza.plate.spring.adapter;
 
 import com.voelza.plate.Plate;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.info.BuildProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -16,8 +17,9 @@ public class PlateSpringConfiguration implements WebMvcConfigurer {
 
     private final PlateViewResolver plateViewResolver;
 
-    public PlateSpringConfiguration(final PlateViewResolver templateViewResolver) {
-        Plate.setVersion(this.getClass().getPackage().getImplementationVersion());
+    public PlateSpringConfiguration(final PlateViewResolver templateViewResolver,
+                                    final BuildProperties buildProperties) {
+        Plate.setVersion(buildProperties.getVersion());
         Plate.setCustomFileLoader(PlateSpringFileLoader::loadViewCode);
         Plate.setTranslations(SpringI18nSupplier::getMessageProperties);
         this.plateViewResolver = templateViewResolver;
