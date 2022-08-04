@@ -17,6 +17,7 @@ public class PlateSpringConfiguration implements WebMvcConfigurer {
     private final PlateViewResolver plateViewResolver;
 
     public PlateSpringConfiguration(final PlateViewResolver templateViewResolver) {
+        Plate.setVersion(this.getClass().getPackage().getImplementationVersion());
         Plate.setCustomFileLoader(PlateSpringFileLoader::loadViewCode);
         Plate.setTranslations(SpringI18nSupplier::getMessageProperties);
         this.plateViewResolver = templateViewResolver;
