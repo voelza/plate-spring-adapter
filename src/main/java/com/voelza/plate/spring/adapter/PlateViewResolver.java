@@ -10,10 +10,15 @@ import java.util.Locale;
 public class PlateViewResolver extends AbstractCachingViewResolver {
 
     @Override
-    protected View loadView(final String viewName, final Locale locale)  {
+    protected View loadView(final String viewName, final Locale locale) {
         if (viewName.startsWith("forward:")) {
             return new PlateStaticView(viewName.substring("forward:".length()));
         }
+
+        if (viewName.startsWith("stream:")) {
+            return new PlateStreamView(viewName.substring("stream:".length()), locale);
+        }
+
         return new PlateView(viewName, locale);
     }
 
