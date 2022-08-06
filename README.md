@@ -26,7 +26,7 @@ Spring adapter for PLATE templating framework.
 ## Usage:
 
 In your `@Controller` classes just return the file name of your PLATE view within your `templates` directory as a
-string.
+string. Beware to not start the file name with a slash `/`.
 
 ```java
 
