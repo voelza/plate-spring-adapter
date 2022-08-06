@@ -22,10 +22,17 @@ public class PlateSpringFileLoader {
     }
 
     public static String loadViewCode(String viewName) {
+        viewName = viewName.replace("\\", "/");
         if (viewName.endsWith(".html")) {
             viewName = viewName.substring(0, viewName.length() - ".html".length());
         }
         if (viewName.startsWith(".")) {
+            viewName = viewName.substring(1);
+        }
+        if (viewName.startsWith("@")) {
+            viewName = viewName.substring(1);
+        }
+        if (viewName.startsWith("/")) {
             viewName = viewName.substring(1);
         }
         return loadFile("classpath*:/templates/" + viewName + ".html");
