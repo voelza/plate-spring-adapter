@@ -56,3 +56,17 @@ public class HomeController {
     }
 }
 ```
+
+# Internationalization
+
+For internationalization just create `message_LOCALE.properties` resource bundle within your `resources` directory.
+For example:
+
+```
+src/main/resource/message_en.properties
+src/main/resources/message_de.properties
+```
+
+# PLATE Syntax
+
+For plate syntax look here: [PLATE documentation](https://github.com/voelza/plate).
