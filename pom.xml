@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.voelza</groupId>
     <artifactId>plate-spring-adapter</artifactId>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
     <name>plate-spring-adapter</name>
     <description>Plate adapter for Spring</description>
     <properties>
