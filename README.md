@@ -57,6 +57,24 @@ public class HomeController {
 }
 ```
 
+# Accessing Spring Beans
+
+To access spring BEANS you have to annotate your BEANs with the `@PlateBean` annotation.
+
+```java
+@Bean
+@PlateBean
+public SeasonService seasonService(){
+        return new SeasonService();
+        }
+```
+
+You can use them by using their name. For example for a text it would look like this:
+
+```html
+$${seasonService.getTheSeason()}
+```
+
 # Internationalization
 
 For internationalization just create `message_LOCALE.properties` resource bundle within your `resources` directory.
