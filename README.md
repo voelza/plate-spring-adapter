@@ -1,6 +1,6 @@
 # plate-spring-adapter
 
-Spring adapter for PLATE templating framework.
+Spring adapter for [PLATE](https://github.com/voelza/plate) templating framework.
 
 ## Setup:
 
